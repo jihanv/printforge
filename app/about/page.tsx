@@ -1,4 +1,5 @@
 import heroImage from "@/public/hero-image-square.png"
+import Image from "next/image"
 
 export default function AboutPage() {
     return (
@@ -11,10 +12,12 @@ export default function AboutPage() {
                 <div className="grid items-center gap-8 mb-12 md:grid-cols-2">
                     <div className="relative h-[300px] w-full">
 
-                        <img
+                        <Image
                             src={heroImage.src}
                             alt="PrintForge Community - A group of makers collaborating on 3D printing projects"
                             className="absolute inset-0 w-full h-full object-cover rounded-lg"
+                            width={742}
+                            height={742}
                         />
 
                     </div>
@@ -97,7 +100,7 @@ export default function AboutPage() {
                         possible with 3D printing.
                     </p>
                     <p className="text-gray-700">
-                        Whether you're a hobbyist looking for your next weekend
+                        Whether you&apos;re a hobbyist looking for your next weekend
                         project, an educator seeking teaching materials, or a
                         professional designer wanting to share your creations,
                         PrintForge provides the tools and community to support
