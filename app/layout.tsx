@@ -4,7 +4,7 @@ import PFLogoIcon from "@/public/printforge-logo-icon.svg"
 import PFLogo from "@/public/printforge-logo.svg"
 import Image from "next/image"
 import Link from "next/link"
-
+import type { RootLayoutProps } from "@/app/types"
 
 
 const albertSans = Albert_Sans({
@@ -19,42 +19,44 @@ const montserratAlternates = Montserrat_Alternates({
   variable: "--font-montserrat-alternates"
 })
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <body className={`${albertSans.className} ${montserratAlternates.variable}`}>
         <header className="w-full bg-white">
           <nav className="flex justify-between px-6 py-4">
-            <div className="relative">
-              {/* Desktop Logo */}
-              <Image
-                src={PFLogo.src}
-                alt="PrintForge Logo"
-                className="w-[200px] h-auto hidden md:block"
-                width={611}
-                height={528}
-              />
-              {/* Mobile Logo */}
-              <Image
-                src={PFLogoIcon.src}
-                alt="PrintForge Logo"
-                className="w-[40px] h-auto block md:hidden"
-                width={612}
-                height={129}
-              />
-            </div>
+            <Link href="/">
+              <div className="relative cursor-pointer">
+                {/* Desktop Logo */}
+                <Image
+                  src={PFLogo.src}
+                  alt="PrintForge Logo"
+                  className="w-[200px] h-auto hidden md:block"
+                  width={611}
+                  height={528}
+                />
+                {/* Mobile Logo */}
+                <Image
+                  src={PFLogoIcon.src}
+                  alt="PrintForge Logo"
+                  className="w-[40px] h-auto block md:hidden"
+                  width={612}
+                  height={129}
+                />
+              </div>
+            </Link>
             <ul className="flex items-center gap-2.5">
-              <p>3D Models</p>
-              <p><Link href="/about">About</Link></p>
+              <li className="text-sm uppercase cursor-pointer">
+                <Link href="/3d-models">3D Models</Link>
+              </li>
+              <li className="text-sm uppercase cursor-pointer">
+                <Link href="/about">About</Link>
+              </li>
             </ul>
           </nav>
         </header>
         {children}
       </body>
-    </html>
+    </html >
   );
 }
