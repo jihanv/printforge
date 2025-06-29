@@ -1,4 +1,4 @@
-import type { CategoryPageProps } from "@/types"
+import type { CategoryPageProps } from "@/app/types"
 import { getCategoryBySlug } from "@/app/lib/categories"
 
 export default async function CategoryPage({ params }: CategoryPageProps) {

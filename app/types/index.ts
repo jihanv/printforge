@@ -1,4 +1,4 @@
-import type { ReactNode } from "react"
+import type {HTMLAttributes, ReactNode } from "react"
 
 // Data Types
 export type Model = {
@@ -50,4 +50,4 @@ export type ModelsGridProps = {
 export type PillProps = {
     children: ReactNode
     className?: string
-}
+}& HTMLAttributes<HTMLSpanElement>;
