@@ -1,3 +1,4 @@
+
 import NavLink from "@/app/components/NavLink"
 import type { ReactNode } from "react"
 import { getAllCategories } from "@/app/lib/categories"
@@ -5,7 +6,7 @@ import type { Category } from "@/app/types"
 
 export default function ModelsLayout({ children }: { children: ReactNode }) {
     const categories: Category[] = getAllCategories()
-    console.log(categories)
+    // console.log(categories)
     return (
         <div className="relative flex flex-col min-h-screen md:flex-row">
             {/* Responsive Navigation */}
@@ -14,6 +15,7 @@ export default function ModelsLayout({ children }: { children: ReactNode }) {
                     <nav className="w-full overflow-x-auto md:overflow-visible scrollbar-hide">
                         <ul className="flex px-4 py-3 space-x-4 whitespace-nowrap md:flex-col md:p-0 md:space-x-0 md:space-y-3">
                             <NavLink
+
                                 href="/3d-models"
                             >
                                 All
