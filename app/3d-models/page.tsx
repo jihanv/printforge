@@ -6,7 +6,8 @@ export default async function Page({ searchParams }: ModelsPageProps) {
     const models = await getModels()
     const query = (await searchParams)?.q
     const filteredModels = query ?
-        models.filter(obj => obj.name.toLowerCase().includes(query.toLowerCase())) :
+        models.filter(model => model.name.toLowerCase().includes(query.toLowerCase()) ||
+            model.description.toLowerCase().includes(query)) :
         models
 
     return (
