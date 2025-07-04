@@ -36,6 +36,13 @@ export type RootLayoutProps = Readonly<{
   children: React.ReactNode;
 }>
 
+export type ModelsPageProps = {
+    searchParams: {
+        q?: string
+    }
+}
+
+
 export type ModelDetailPageProps = {
     params: Promise<{
         id: string
